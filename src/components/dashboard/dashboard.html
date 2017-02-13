@@ -1,0 +1,73 @@
+<div class="content">
+
+    <div class="content__left-section">
+        <div class="content__left-section__header">
+            <strong>Accounts</strong>
+
+            <div class="content__left-section__header__actions">
+                <button class="btn btn-primary" ng-click="vm.addAccount()">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    <span>Add Account</span>
+                </button>
+                <button class="btn btn-primary">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                    <span>Refresh</span>
+                </button>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th ng-click="vm.sortType = 'name'; vm.sortReverse = !vm.sortReverse">
+                        <span ng-show="vm.sortType == 'name' && vm.sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="vm.sortType == 'name' && !vm.sortReverse" class="fa fa-caret-up"></span>
+                        Name
+                    </th>
+
+                    <th ng-click="vm.sortType = 'marketValue'; vm.sortReverse = !vm.sortReverse">
+                        <span ng-show="vm.sortType == 'marketValue' && vm.sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="vm.sortType == 'marketValue' && !vm.sortReverse" class="fa fa-caret-up"></span>
+                        Market Value
+                    </th>
+
+                    <th ng-click="vm.sortType = 'cash'; vm.sortReverse = !vm.sortReverse">
+                        <span ng-show="vm.sortType == 'cash' && vm.sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="vm.sortType == 'cash' && !vm.sortReverse" class="fa fa-caret-up"></span>
+                        Cash
+                    </th>
+
+                    <th>Legend</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in vm.accounts | orderBy:vm.sortType:vm.sortReverse">
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.marketValue | currency }}</td>
+                    <td>{{ row.cash | currency }}</td>
+                    <td>
+                        <div class="legend" style="background-color: {{ row.legend }}"></div>
+                    </td>
+                </tr>
+
+                <tr class="table__totals">
+                    <td></td>
+                    <td>
+                        <strong>{{ vm.total.marketValue | currency }}</strong>
+                    </td>
+                    <td>
+                        <strong>{{ vm.total.cash | currency }}</strong>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="content__right-section">
+        <img class="chart" src="./../images/chart.png" alt="Chart">
+
+        <div class="content__right-section__help-label">Click on an account to view positions</div>
+    </div>
+
+</div>

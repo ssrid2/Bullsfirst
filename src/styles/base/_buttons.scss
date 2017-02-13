@@ -1,0 +1,19 @@
+.btn {
+    min-width: 110px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 0;
+    color: $color-default-button-text;
+}
+
+.btn.btn-primary {
+    background: $color-button-primary;
+}
+
+.btn.btn-secondary {
+    background: $color-button-secondary;
+
+    span {
+        display: block;
+    }
+}

@@ -1,0 +1,23 @@
+table {
+
+    width: 100%;
+    margin: 20px 0;
+
+    td {
+        padding: 5px;
+    }
+
+    th {
+        background: $color-secondary;
+        color: $color-tertiary;
+        border: 1px white solid;
+        padding: 5px;
+        text-transform: uppercase;
+        cursor: default;
+
+        span {
+            color: $color-primary;
+        }
+    }
+
+}

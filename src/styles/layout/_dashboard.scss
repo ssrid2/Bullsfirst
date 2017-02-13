@@ -1,0 +1,58 @@
+.content {
+
+  display: flex;
+  background: $color-background-default;
+  flex-direction: row;
+  padding: 40px;
+
+  &__left-section {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  &__left-section__header {
+    display: flex;
+    height: 30px;
+  }
+
+  &__left-section__header__actions {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .table__totals td {
+    border-top: 2px solid $color-secondary;
+  }
+
+  .legend {
+    width: 30px;
+    height: 16px;
+  }
+
+  &__right-section {
+    width: 300px;
+    background: $color-secondary;
+  }
+
+  .chart {
+    height: 300px;
+  }
+
+  &__right-section__help-label {
+    padding: 10px;
+    text-align: center;
+    font-style: italic;
+  }
+
+  @media (max-width: 840px) {
+    flex-direction: column;
+
+    &__right-section {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+  }
+
+}

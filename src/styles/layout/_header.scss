@@ -1,0 +1,12 @@
+.header {
+
+  display: flex;
+  background: $color-primary;
+  padding: 30px 40px;
+
+    &__actions {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

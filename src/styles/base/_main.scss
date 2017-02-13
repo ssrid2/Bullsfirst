@@ -1,0 +1,21 @@
+body {
+    font-size: 14px;
+    font-family: "Helvetica Neue", "Arial", "sans-serif";
+    max-width: 1200px;
+    padding: 10px 30px 50px 30px;
+    margin: 0 auto;
+    background: $color-background-dark;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+    border: none;
+}
+
+footer {
+    margin: 20px 0 0 0;
+    color: $color-default-footer-text;
+    font-style: italic;
+
+}
